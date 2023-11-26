@@ -1,0 +1,106 @@
+#include <stdio.h>
+
+int main() {
+    int opcao;
+
+    printf("Bem-vindo ao sistema do hotel!
+");
+    printf("Escolha uma opção:
+");
+    printf("1 - Fazer Check-in
+");
+    printf("2 - Chamar serviço de quarto
+");
+    printf("3 - Fazer pedido
+");
+    scanf("%d", &opcao);
+
+    switch(opcao) {
+        case 1:
+            printf("Fazer Check-in");
+            char nome[50], cpf[12], telefone[12], cidade[50], estado[50];
+            
+            printf("Digite seu nome: ");
+            fflush(stdin);
+            fgets(nome, 50, stdin);
+
+            printf("Digite seu CPF: ");
+            fflush(stdin);
+            fgets(cpf, 12, stdin);
+
+            printf("Digite seu telefone: ");
+            fflush(stdin);
+            fgets(telefone, 12, stdin);
+
+            printf("Digite sua cidade: ");
+            fflush(stdin);
+            fgets(cidade, 50, stdin);
+            
+            printf("Digite seu estado: ");
+            fflush(stdin);
+            fgets(estado, 50, stdin);
+
+            printf("Dados do Check-in:");
+            printf("Nome: %s", nome);
+            printf("CPF: %s", cpf);
+            printf("Telefone: %s", telefone);
+            printf("Cidade: %s", cidade);
+            printf("Estado: %s", estado);
+
+            break;
+
+        case 2:
+            printf("Chamar serviço de quarto");
+            char nomeHospede[50];
+            int numeroQuarto;
+
+            printf("Digite seu nome: ");
+            fflush(stdin);
+            fgets(nomeHospede, 50, stdin);
+
+            printf("Digite o número do quarto: ");
+            scanf("%d", &numeroQuarto);
+
+            printf("Chamando serviço de quarto para o hóspede %s no quarto %d.", nomeHospede, numeroQuarto);
+
+            break;
+
+        case 3:
+            printf("Fazer pedido");
+            int opcaoPedido;
+
+            do {
+                printf("Escolha uma opção:");
+                printf("1 - Comida");
+                printf("2 - Bebida");
+                printf("3 - Finalizar pedido");
+                scanf("%d", &opcaoPedido);
+
+                switch(opcaoPedido) {
+                    case 1:
+                        printf("Opção escolhida: Comida");
+                        break;
+
+                    case 2:
+                        printf("Opção escolhida: Bebida");
+                        break;
+
+                    case 3:
+                        printf("Pedido finalizado");
+                        break;
+
+                    default:
+                        printf("Opção inválida");
+                        break;
+                }
+            } while(opcaoPedido != 3);
+
+            break;
+
+        default:
+            printf("Opção inválida");
+            break;
+    }
+
+    return 0;
+}

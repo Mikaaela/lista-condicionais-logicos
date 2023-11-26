@@ -1,0 +1,10 @@
+#include #include
+int main() { int num_lados; float medida_lado, area;
+
+printf("Digite o número de lados do polígono: "); scanf("%d", &num_lados);
+
+printf("Digite a medida do lado (em cm): "); scanf("%f", &medida_lado);
+
+if (num_lados == 3) { printf("TRIÂNGULO "); area = (sqrt(3) * pow(medida_lado, 2)) / 4; printf("Área: %.2f cm² ", area); } else if (num_lados == 4) { printf("QUADRADO "); area = pow(medida_lado, 2); printf("Área: %.2f cm² ", area); } else if (num_lados == 5) { printf("PENTÁGONO "); } else { printf("Polígono com %d lados.\n", num_lados); }
+
+return 0; } 
